@@ -28,7 +28,7 @@
         <div class="form">
           <div class="input_field">
             <label>Name</label>
-            <input type="text" class="input">
+            <input type="text" class="input" name="nama">
           </div>
           <!-- <div class="input_field">
                         <label>Last Name</label>
@@ -42,13 +42,11 @@
             <label>Address</label>
             <!-- <textarea class="textarea"></textarea> -->
             <div class="PilihanAlamat">
-              <select>
-                <option value="">Alamat Kamu</option>
+              <select id="alamat">
                 <option value="jakartautara">Jakarta Utara</option>
                 <option value="jakartatimur">Jakarta Timur</option>
                 <option value="jakartaselatan">Jakarta Selatan</option>
                 <option value="jakartabarat">Jakarta Barat</option>
-                <option value="jakartapusat">Jakarta Pusat</option>
               </select>
             </div>
           </div>
@@ -85,9 +83,20 @@
   </div>
   <div class="buttom">
   </div>
+  <script>
+    let form = document.querySelector('.skill')
+    form.addEventListener('submit', function (event) {
+      event.preventDefault()
+      let nama = document.querySelector('input[name="nama"]').value
+      let dimana = document.querySelector('#alamat').value
+      let ngapain = document.querySelector('input[name="jawaban"]:checked').value
+      localStorage.setItem('nameInput', nama)
+      localStorage.setItem('dimanaInput', dimana)
+      localStorage.setItem('ngapainInput', ngapain)
+      window.location.href = '../Pilih/'
+    })
+  </script>
 </body>
-<footer>
-</footer>
 </head>
 
 </html>

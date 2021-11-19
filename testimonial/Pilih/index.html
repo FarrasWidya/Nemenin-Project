@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title></title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pilih.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
@@ -137,8 +137,8 @@
           photo: 'renhard.png'
         }
       ]
-      let dimana = 'jakartatimur';
-      let ngapain = 'gaming';
+      let dimana = localStorage.getItem('dimanaInput');
+      let ngapain = localStorage.getItem('ngapainInput');
       let partners = [];
       let nicks = [];
       let status = [];
@@ -190,7 +190,7 @@
         nameDiv.setAttribute('class', 'name')
         nameDiv.innerHTML = partners[1][i]
         let anchor = document.createElement('a');
-        anchor.setAttribute('href', 'kapan.html');
+        anchor.setAttribute('href', '../End/');
         anchor.setAttribute('class', 'anchorr')
         let img = document.createElement('img');
         img.setAttribute('src', partners[4][i]);
@@ -235,8 +235,5 @@
     }
   </script>
 </body>
-<footer>
-
-</footer>
 
 </html>
