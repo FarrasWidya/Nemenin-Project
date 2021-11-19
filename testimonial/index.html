@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+<body onload="add()">
+  <header>
+    <div class="banner">
+      <div class="navbar">
+        <h1>NMN</h1>
+      </div>
+  </header>
+  <div class="testimonials">
+    <div class="inner">
+      <h1>Profil Teman Kamu !</h1>
+      <div class="border"></div>
+
+      <div class="row">
+        <!-- <div class="col">
+          <div class="testimonial">
+            <img src="anggoro.png" alt="">
+            <div class="name">Anggo ro</div>
+
+            <p>
+              “Jangan takut”
+            </p>
+            <br>
+            <span>-Teman Liar-</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="testimonial">
+            <img src="farras.png" alt="">
+            <div class="name">Far ras</div>
+
+            <p>
+              “Aku akan mengajakmu ikut referral hactiv”
+            </p>
+            <br>
+            <span>-Mirip Ridwan Hanif-</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="testimonial">
+            <img src="rafi.png" alt="">
+            <div class="name">Ra Fi</div>
+
+            <p>
+              “Bisalah”
+            </p>
+            <br>
+            <span>-bek en-</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="testimonial">
+            <img src="dennis.png" alt="">
+            <div class="name">Den nis</div>
+
+            <p>
+              “Jutaan orang bahkan tidak menyadari bahwa mereka bisa menghasilkan seribu US dollar sehari”
+            </p>
+            <br>
+            <span>-Founder Cinomo-</span>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="testimonial">
+            <img src="renhard.png" alt="">
+            <div class="name">Ren Easy</div>
+
+            <p>
+              “Sudahi kesendirianmu, mari ikut bermain bersamaku. 〇∆⊡”
+            </p>
+            <br>
+            <span>-Hackathon breezy bersama Ren Easy-</span>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    function getPartner() {
+      const dataTim = [
+        {
+          nama: 'farras',
+          nick: 'Far ras',
+          status: '-Mirip Ridwan Hanif-',
+          motto: 'Aku akan mengajakmu ikut referral hactiv',
+          skill: ['gaming', 'hangout', 'deeptalk'],
+          lokasi: ['jakartaselatan', 'jakartatimur'],
+          photo: 'farras.png'
+        },
+        {
+          nama: 'rafi',
+          nick: 'Ra fi',
+          status: '-bek en-',
+          motto: '“Bisalah”',
+          skill: ['gaming', 'hangout', 'deeptalk', 'kondangan'],
+          lokasi: ['jakartaselatan', 'jakartautara'],
+          photo: 'rafi.png'
+        },
+        {
+          nama: 'dennis',
+          nick: 'Den nis',
+          status: '-Founder Cinomo-',
+          motto: '“Jutaan orang bahkan tidak menyadari bahwa mereka bisa menghasilkan seribu US dollar sehari”',
+          skill: ['deeptalk', 'kondangan'],
+          lokasi: ['jakartaselatan', 'jakartabarat'],
+          photo: 'dennis.png'
+        },
+        {
+          nama: 'anggo',
+          nick: 'Anggo Ro',
+          status: '-Teman Liar-',
+          motto: '“Jangan takut”',
+          skill: ['gaming'],
+          lokasi: ['jakartatimur'],
+          photo: 'anggoro.png'
+        },
+        {
+          nama: 'renhard',
+          nick: 'Ren Easy',
+          status: 'Sudahi kesendirianmu, mari ikut bermain bersamaku. 〇∆⊡',
+          motto: '“-Hackathon breezy bersama Ren Easy-”',
+          skill: ['gaming', 'hangout', 'deeptalk', 'kondangan'],
+          lokasi: ['jakartatimur', 'jakartabarat'],
+          photo: 'renhard.png'
+        }
+      ]
+      let dimana = 'jakartatimur';
+      let ngapain = 'gaming';
+      let partners = [];
+      let nicks = [];
+      let status = [];
+      let mottos = [];
+      let photos = [];
+
+      for (let i = 0; i < dataTim.length; i++) {
+        let dimanaFlag = false;
+        let ngapainFlag = false;
+
+        for (let j = 0; j < dataTim[i].lokasi.length; j++) {
+          if (dimana === dataTim[i].lokasi[j]) {
+            dimanaFlag = true;
+          }
+        }
+
+        for (let j = 0; j < dataTim[i].skill.length; j++) {
+          if (ngapain === dataTim[i].skill[j]) {
+            ngapainFlag = true;
+          }
+        }
+
+        if (dimanaFlag === true && ngapainFlag === true) {
+          partners.push(dataTim[i].nama);
+          nicks.push(dataTim[i].nick);
+          status.push(dataTim[i].status);
+          mottos.push(dataTim[i].motto);
+          photos.push(dataTim[i].photo)
+        }
+      }
+
+      return [partners, nicks, status, mottos, photos];
+    }
+
+    function add() {
+      let partners = getPartner();
+      console.log(partners)
+
+      // let para = document.createElement('p');
+      // para.innerHTML = 'haloooo'
+      // document.getElementsByClassName('cards')[0].appendChild(para)
+
+      for (let i = 0; i < partners[0].length; i++) {
+        let outerDiv = document.createElement('div');
+        outerDiv.setAttribute('class', 'col');
+        let innerDiv = document.createElement('div');
+        innerDiv.setAttribute('class', 'testimonial');
+        let nameDiv = document.createElement('div')
+        nameDiv.setAttribute('class', 'name')
+        nameDiv.innerHTML = partners[1][i]
+        let anchor = document.createElement('a');
+        anchor.setAttribute('href', 'kapan.html');
+        anchor.setAttribute('class', 'anchorr')
+        let img = document.createElement('img');
+        img.setAttribute('src', partners[4][i]);
+        let para = document.createElement('p');
+        para.innerHTML = partners[3][i];
+        let br = document.createElement('br');
+        let span1 = document.createElement('span');
+        span1.innerHTML = partners[2][i];
+        // let span2 = document.createElement('span');
+        // span2.innerHTML = partners[2][i];
+
+        document.querySelector('.row').appendChild(outerDiv);
+        document.getElementsByClassName('col')[i].appendChild(innerDiv);
+        document.getElementsByClassName('testimonial')[i].appendChild(anchor);
+        document.getElementsByClassName('anchorr')[i].appendChild(img);
+        document.getElementsByClassName('testimonial')[i].appendChild(nameDiv);
+        document.getElementsByClassName('testimonial')[i].appendChild(para);
+        document.getElementsByClassName('testimonial')[i].appendChild(br);
+        document.getElementsByClassName('testimonial')[i].appendChild(span1);
+        // document.getElementsByClassName('testimonial')[i].appendChild(span2);
+      }
+
+      // let fotoFarras = partners[4][0];
+      // let outerDiv = document.createElement('div');
+      // outerDiv.setAttribute('class', 'card');
+      // let innerDiv = document.createElement('div');
+      // innerDiv.setAttribute('class', 'profile');
+      // let anchor = document.createElement('a');
+      // anchor.setAttribute('href', 'kapan.html');
+      // anchor.setAttribute('class', 'anchorr');
+      // let img = document.createElement('img');
+      // img.setAttribute('src', fotoFarras);
+      // let para = document.createElement('p');
+      // para.innerHTML = partners[3][0]
+
+      // document.getElementsByClassName('cards')[0].appendChild(outerDiv);
+      // document.getElementsByClassName('card')[0].appendChild(innerDiv);
+      // document.getElementsByClassName('profile')[0].appendChild(anchor);
+      // document.getElementsByClassName('anchorr')[0].appendChild(img);
+      // document.getElementsByClassName('profile')[0].appendChild(para);
+
+    }
+  </script>
+</body>
+
+</html>
