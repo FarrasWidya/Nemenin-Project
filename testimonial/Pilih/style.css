@@ -12,6 +12,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 100vh;
 }
 .inner{
   max-width: 1200px;
@@ -118,4 +119,15 @@
 }
 .navbar ul li:hover::after{
   width: 100%;
+}
+footer{
+    padding: 40px 0;
+    background: #f1f1f1;
+    color: #434343;
+    text-align: center;
+    background-image: linear-gradient(rgba(168, 210, 235, 0.74), rgba(247, 208, 208, 0.75)), url(30461d364163bd18b6e138289b7a6db6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin:0 auto;
 }
