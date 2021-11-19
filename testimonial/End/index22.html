@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan</title>
+  <link rel="stylesheet" href="end.css">
+</head>
+
+<body class="banner">
+  <div class="navbar">
+    <h1>NMN</h1>
+    <ul>
+      <li><a href="#">Gaming</a></li>
+      <li><a href="#">HangOout</a></li>
+      <li><a href="#">DeepTalk</a></li>
+      <li><a href="#">Party</a></li>
+
+    </ul>
+  </div>
+  <div class="wrapper title">
+    <div class="title">ENJOY MY LOVE!</div>
+  </div>
+  <script>
+    let nama = localStorage.getItem("namaInput");
+    let kategori = localStorage.getItem("kategoriInput")
+    let dapatHarga = localStorage.getItem("dapatHarga")
+    let durasi = localStorage.getItem("durasiInput")
+    let hari = localStorage.getItem("hariInput")
+    let lokasi = localStorage.getItem("lokasiInput")
+    let tim = localStorage.getItem("finalChoose")
+    let pesan = document.createElement("P")
+    // appendChild(para)
+    pesan.innerText = `terimakasih ${nama} sayang sudah order ${kategori} untuk hari ${durasi} durasi ${hari} jam lokasi di ${lokasi}, total yang harus dibayarkan adalah sebesar ${dapatHarga}. untuk selanjutnya bae ${tim} akan menghubungi kami untuk informasi selanjutnya `
+    document.body.appendChild(pesan)
+  </script>
+</body>
+
+</html>
