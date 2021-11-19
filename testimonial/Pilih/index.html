@@ -190,10 +190,11 @@
         nameDiv.setAttribute('class', 'name')
         nameDiv.innerHTML = partners[1][i]
         let anchor = document.createElement('a');
-        anchor.setAttribute('href', '../End/');
+        anchor.setAttribute('href', `javascript: partnerOnClick('${partners[1][i]}')`);
         anchor.setAttribute('class', 'anchorr')
         let img = document.createElement('img');
         img.setAttribute('src', partners[4][i]);
+        img.setAttribute('value', partners[1][i])
         let para = document.createElement('p');
         para.innerHTML = partners[3][i];
         let br = document.createElement('br');
@@ -232,6 +233,10 @@
       // document.getElementsByClassName('anchorr')[0].appendChild(img);
       // document.getElementsByClassName('profile')[0].appendChild(para);
 
+    }
+    function partnerOnClick(nama) {
+      localStorage.setItem('namaPartner', nama)
+      window.location.href = '../End/'
     }
   </script>
 </body>

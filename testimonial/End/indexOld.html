@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>ENDING</title>
+  <link rel="stylesheet" href="end.css">
+</head>
+
+<body onload="kalimat()">
+  <div id="modalbox" class="modal">
+    <div class="modalcontent">
+      <h1>BERHASIL!</h1>
+      <!-- <a href="#" class="modalclose">&times;</a> -->
+    </div>
+    <div>
+      <button type="button">Delete</button>
+    </div>
+  </div>
+  <script>
+    function kalimat() {
+      let namaPartner = localStorage.getItem('namaPartner')
+      let namaKamu = localStorage.getItem('nameInput')
+      let pesan = document.createElement('P')
+      pesan.innerHTML = `terimakasih ${namaKamu} sayang ,untuk selanjutnya bae ${namaPartner} akan menghubungi kamu untuk informasi selanjutnya`
+      document.querySelector('.modalcontent').appendChild(pesan)
+    }
+  </script>
+</body>
+
+</html>

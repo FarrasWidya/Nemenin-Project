@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
-  <title>ENDING</title>
-  <link rel="stylesheet" href="end.css">
+  <meta charset="utf-8">
+  <title>LANJUT PROSES</title>
+  <link rel="stylesheet" href="delete.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 
-<body>
-  <div id="modalbox" class="modal">
-    <div class="modalcontent">
-      <h1>BERHASIL!</h1>
-      <p>Kamu berhasil bekerja sama dengan kami!</p>
-      <a href="#" class="modalclose">&times;</a>
+<body onload="kalimat()">
+  <div class="popup_box">
+    <h1></h1>
+    <div class="btns">
+      <a href="../Cover/" class="btn1">Home</a>
+      <a href="javascript: deleteData()" class="btn2">Cancel</a>
+      <input type="button" id="delete" name="Delete">
     </div>
   </div>
+  <script>
+    function kalimat() {
+      let namaPartner = localStorage.getItem('namaPartner')
+      let namaKamu = localStorage.getItem('nameInput')
+      let pesan = document.createElement('P')
+      // pesan.innerHTML = `terimakasih ${namaKamu} sayang ,untuk selanjutnya bae ${namaPartner} akan menghubungi kamu untuk informasi selanjutnya`
+      document.querySelector('h1').textContent = `Terima kasih ${namaKamu} sayang, untuk selanjutnya bae ${namaPartner} akan menghubungi kamu untuk informasi selanjutnya`
+    }
+    function deleteData() {
+      localStorage.clear()
+      alert('Kamu tega')
+      window.location.href = '../Regist/'
+    }
+  </script>
 </body>
 
 </html>
